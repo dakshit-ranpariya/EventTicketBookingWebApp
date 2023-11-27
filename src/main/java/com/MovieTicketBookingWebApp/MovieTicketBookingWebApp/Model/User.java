@@ -2,6 +2,7 @@ package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -30,4 +31,6 @@ public class User {
 
     @Pattern(regexp="(^$|[0-9]{10})")
     private String userMobileNo;
+
+    private String status;
 }
