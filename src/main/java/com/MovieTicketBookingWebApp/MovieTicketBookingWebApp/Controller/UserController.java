@@ -37,6 +37,8 @@ public class UserController {
         return userService.resetPassword(email);
     }
 
+
+
     @PostMapping("/verifyOTP")
     private String verifyOTP(@RequestBody ResetDTO user) throws NoSuchAlgorithmException{
         return userService.verifyOTP(user);
