@@ -46,7 +46,7 @@ public class UserService {
         if(user.getStatus().equals("Logged in")){
             user.setStatus(("Logged Out"));
             userRepo.save(user);
-            return "Logout Suceessfully";
+            return "Logout Sucessfully";
         }else {
             return "Already LogOut";
         }

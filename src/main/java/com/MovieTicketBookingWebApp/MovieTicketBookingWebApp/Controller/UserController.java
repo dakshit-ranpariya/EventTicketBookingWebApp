@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping("login")
-    public String signIn(@RequestBody String email, @RequestBody String Password) throws NoSuchAlgorithmException {
+    public String signIn(@RequestParam String email, @RequestParam String Password) throws NoSuchAlgorithmException {
         return userService.signIn(email, Password);
     }
 
