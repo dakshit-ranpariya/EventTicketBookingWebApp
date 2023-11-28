@@ -33,4 +33,7 @@ public class User {
     private String userMobileNo;
 
     private String status;
+
+    private String otp;
+
 }
