@@ -13,6 +13,7 @@ import java.security.NoSuchAlgorithmException;
 @RestController
 @AllArgsConstructor
 @NoArgsConstructor
+@RequestMapping("user")
 public class UserController {
     @Autowired
     UserService userService;
@@ -23,25 +24,23 @@ public class UserController {
     }
 
     @PostMapping("login")
-    public String signIn(@RequestParam String email, @RequestParam String Password) throws NoSuchAlgorithmException {
-        return userService.signIn(email, Password);
+    public String signIn(@RequestParam String userEmail, @RequestParam String userPassword) throws NoSuchAlgorithmException {
+        return userService.signIn(userEmail, userPassword);
     }
 
     @GetMapping("signout")
-    public String signOut(@RequestBody String email){
-        return userService.signoutUser(email);
+    public String signOut(@RequestParam String userEmail){
+        return userService.signoutUser(userEmail);
     }
 
-    @PostMapping("/resetPassword")
-    private String resetPassword(@RequestParam String email){
-        return userService.resetPassword(email);
+    @PostMapping("resetPassword")
+    private String resetPassword(@RequestParam String userEmail){
+        return userService.resetPassword(userEmail);
     }
 
 
-    //space test
 
-
-    @PostMapping("/verifyOTP")
+    @PostMapping("verifyOTP")
     private String verifyOTP(@RequestBody ResetDTO user) throws NoSuchAlgorithmException{
         return userService.verifyOTP(user);
     }

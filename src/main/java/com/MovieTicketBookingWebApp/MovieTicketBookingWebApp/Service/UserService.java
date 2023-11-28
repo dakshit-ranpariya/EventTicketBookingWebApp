@@ -14,9 +14,11 @@ import java.security.NoSuchAlgorithmException;
 public class UserService {
     @Autowired
     UserRepo userRepo;
+    @Autowired
+    EmailService emailService;
     public String registerUser(User user) throws NoSuchAlgorithmException {
             if(userRepo.existsByuserEmail(user.getUserEmail())){
-                return "User Already Registerd";
+                return "User Already Registered";
             }
             String hashPass = passwordEncrypter.hashPasswordWithStaticSecret(user.getUserPassword());
             user.setUserPassword(hashPass);
@@ -43,12 +45,12 @@ public class UserService {
     public String signoutUser(String email) {
         User user =userRepo.findByUserEmail(email);
 
-        if(user.getStatus().equals("Logged in")){
+        if(user.getStatus().equals("Logged In")){
             user.setStatus(("Logged Out"));
             userRepo.save(user);
-            return "Logout Sucessfully";
+            return "Logout Successfully";
         }else {
-            return "Already LogOut";
+            return "Already Logged Out";
         }
     }
 
@@ -61,7 +63,7 @@ public class UserService {
 
         user.setOtp(otp);
         userRepo.save(user);
-        EmailService.sendOtpEmail(email,otp);
+        emailService.sendOtpEmail(email,otp);
         return "OTP Send Successfully";
     }
 
