@@ -24,4 +24,18 @@ public class ShowService {
             return "Admin Login Required!";
         }
     }
+
+    public String removeShow(String showName) {
+        Admin admin = adminRepo.findByAdminName("admin");
+        if(admin.getStatus().equals("Logged In")){
+            if(!showRepo.existsByShowName(showName)){
+                return "Show Not Found";
+            }
+            Shows show = showRepo.findByShowName(showName);
+            showRepo.delete(show);
+            return "Show deleted Successfully";
+        }else{
+            return "Admin Login Required!";
+        }
+    }
 }
