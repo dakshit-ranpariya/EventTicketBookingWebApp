@@ -25,6 +25,9 @@ public class ShowService {
     @Autowired
     UserRepo userRepo;
 
+    @Autowired
+    EmailService emailService;
+
     public String addShow(Shows show) {
         Admin admin = adminRepo.findByAdminName("admin");
         if(admin.getStatus().equals("Logged In")){
@@ -63,6 +66,7 @@ public class ShowService {
                     if(shows.getPlatinumSeats()>=bookingDTO.getTickets()){
                         shows.setPlatinumSeats(shows.getPlatinumSeats()-bookingDTO.getTickets());
                         showRepo.save(shows);
+                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets());
                         return "Ticket is booked successfully";
                     }else{
                         return "Not enough seats are available";
@@ -71,6 +75,7 @@ public class ShowService {
                     if(shows.getGoldSeats()>=bookingDTO.getTickets()){
                         shows.setGoldSeats(shows.getGoldSeats()-bookingDTO.getTickets());
                         showRepo.save(shows);
+                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets());
                         return "Ticket is booked successfully";
                     }else{
                         return "Not enough seats are available";
@@ -80,6 +85,7 @@ public class ShowService {
                     if(shows.getSilverSeats()>=bookingDTO.getTickets()){
                         shows.setSilverSeats(shows.getSilverSeats()-bookingDTO.getTickets());
                         showRepo.save(shows);
+                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets());
                         return "Ticket is booked successfully";
                     }else{
                         return "Not enough seats are available";

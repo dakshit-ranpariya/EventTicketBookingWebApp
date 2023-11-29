@@ -1,5 +1,6 @@
 package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service;
 
+import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,44 @@ public class EmailService {
             javaMailSender.send(message);
         }catch (MessagingException e){
             e.printStackTrace();
+        }
+    }
+
+
+
+    public void sendBookingMail(String userEmail, String showName, String venue, String classType, Integer tickets) {
+        try {
+            MimeMessage message = javaMailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+
+            helper.setTo(userEmail);
+
+            // Create the HTML content for the email
+            String subject = "Ticket Booking Details";
+            StringBuilder body = new StringBuilder();
+            body.append("<html>");
+            body.append("<body>");
+            body.append("<div style='text-align: center;'>");
+            body.append("<h1 style='color: #007BFF;'>Ticket Booking Details</h1>");
+            body.append("<p>Your ticket booking details are as follows:</p>");
+            body.append("<p>User Email: " + userEmail + "</p>");
+            body.append("<p>Show Name: " + showName + "</p>");
+            body.append("<p>Venue: " + venue + "</p>");
+            body.append("<p>Class Type: " + classType + "</p>");
+            body.append("<p>Number of Tickets: " + tickets + "</p>");
+            body.append("</div>");
+            body.append("</body>");
+            body.append("</html>");
+
+
+            // Set the email content as HTML
+            helper.setText(body.toString(), true);
+
+            // Send the email
+            javaMailSender.send(message);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            // Handle the exception
         }
     }
 }

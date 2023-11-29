@@ -67,10 +67,10 @@ public class UserService {
         return "OTP Send Successfully";
     }
 
-    public String verifyOTP(ResetDTO user) throws NoSuchAlgorithmException {
-        User existingUser =userRepo.findByUserEmail(user.getEmail());
-        if(existingUser != null && existingUser.getOtp().equals(user.getOtp())){
-            String newHashPass = passwordEncrypter.hashPasswordWithStaticSecret(user.getNewPass());
+    public String verifyOTP(ResetDTO resetDTOUser) throws NoSuchAlgorithmException {
+        User existingUser =userRepo.findByUserEmail(resetDTOUser.getEmail());
+        if(existingUser != null && existingUser.getOtp().equals(resetDTOUser.getOtp())){
+            String newHashPass = passwordEncrypter.hashPasswordWithStaticSecret(resetDTOUser.getNewPass());
             existingUser.setUserPassword(newHashPass);
             userRepo.save(existingUser);
             return "Password Changed";
