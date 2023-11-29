@@ -25,7 +25,7 @@ public class EmailService {
             helper.setSubject("OTP Verification");
 
             StringBuilder Body = new StringBuilder();
-            Body.append("Login otp : ");
+            Body.append("Login otp: ");
             Body.append(otp);
             helper.setText(Body.toString(),true);
             javaMailSender.send(message);
@@ -56,7 +56,7 @@ public class EmailService {
             body.append("<p>Venue: " + venue + "</p>");
             body.append("<p>Class Type: " + classType + "</p>");
             body.append("<p>Number of Tickets: " + tickets + "</p>");
-            body.append("<p>Price per Ticket :" + ticketPrice + "</p>");
+            body.append("<p>Price per Ticket: " + ticketPrice + "</p>");
             body.append("<p>Total amount: " + totalPrice + "</p>");
             body.append("</div>");
             body.append("</body>");

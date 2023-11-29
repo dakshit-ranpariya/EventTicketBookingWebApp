@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class passwordEncrypter {
-    private static final String SECRET_KEY = "hum jaha khade hote he, Password vahi se suru hota he";
+    private static final String SECRET_KEY = "hum jaha khade hote he, Password wahi se shuru hota hai";
     public static String hashPasswordWithStaticSecret(String userPassword) throws NoSuchAlgorithmException {
         String combinedPassword = userPassword + SECRET_KEY;
 
