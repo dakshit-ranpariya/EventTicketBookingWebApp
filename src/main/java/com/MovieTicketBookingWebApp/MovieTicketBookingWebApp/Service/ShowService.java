@@ -7,6 +7,7 @@ import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.User;
 import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.AdminRepo;
 import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.ShowRepo;
 import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.UserRepo;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,7 +53,7 @@ public class ShowService {
         return showRepo.findAll();
     }
 
-    public String ticketBooking(BookingDTO bookingDTO) {
+    public String ticketBooking(@NotNull BookingDTO bookingDTO) {
         User user = userRepo.findByUserEmail(bookingDTO.getUserEmail());
         if(user.getStatus().equals("Logged In")){
 
@@ -66,10 +67,7 @@ public class ShowService {
                     }else{
                         return "Not enough seats are available";
                     }
-                }else{
-                    return bookingDTO.getClassType()+" type does not exists!";
-                }
-                if(bookingDTO.getClassType().equals("gold")){
+                }else if(bookingDTO.getClassType().equals("gold")){
                     if(shows.getGoldSeats()>=bookingDTO.getTickets()){
                         shows.setGoldSeats(shows.getGoldSeats()-bookingDTO.getTickets());
                         showRepo.save(shows);
@@ -78,10 +76,7 @@ public class ShowService {
                         return "Not enough seats are available";
                     }
                 }
-                else{
-                    return bookingDTO.getClassType()+" type does not exists!";
-                }
-                if(bookingDTO.getClassType().equals("silver")){
+                else if(bookingDTO.getClassType().equals("silver")){
                     if(shows.getSilverSeats()>=bookingDTO.getTickets()){
                         shows.setSilverSeats(shows.getSilverSeats()-bookingDTO.getTickets());
                         showRepo.save(shows);
