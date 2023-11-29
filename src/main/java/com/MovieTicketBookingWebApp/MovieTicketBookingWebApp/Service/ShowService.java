@@ -59,9 +59,9 @@ public class ShowService {
     public String ticketBooking(@NotNull BookingDTO bookingDTO) {
         User user = userRepo.findByUserEmail(bookingDTO.getUserEmail());
         if(user.getStatus().equals("Logged In")){
+            if(showRepo.existsByShowName(bookingDTO.getShowName())){
+                Shows shows = showRepo.findByShowName(bookingDTO.getShowName());
 
-            Shows shows = showRepo.findByShowName(bookingDTO.getShowName());
-            if(showRepo.existsByShowName(shows.getShowName())){
                 if(bookingDTO.getClassType().equals("platinum")){
                     if(shows.getPlatinumSeats()>=bookingDTO.getTickets()){
                         shows.setPlatinumSeats(shows.getPlatinumSeats()-bookingDTO.getTickets());

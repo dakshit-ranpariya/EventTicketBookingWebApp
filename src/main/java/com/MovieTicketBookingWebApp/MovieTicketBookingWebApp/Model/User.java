@@ -1,6 +1,7 @@
 package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,8 +26,7 @@ public class User {
 
     private String userDob;
 
-    @Pattern(regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")
-    @Column(unique = true)
+    @Email
     private String userEmail;
 
     @Pattern(regexp="(^$|[0-9]{10})")
