@@ -19,6 +19,18 @@ public class AdminService {
             adminRepo.save(admin);
             return "Admin Logged In Successfully";
         }
-        return "Ok";
+        return "Invalid Credential";
+    }
+
+    public String adminLogout(String adminName) {
+        Admin admin = adminRepo.findByAdminName(adminName);
+
+        if(admin.getStatus().equals("Logged In")){
+            admin.setStatus("Logged Out");
+            adminRepo.save(admin);
+            return "Logout Successfully";
+        }else{
+            return "Admin is not Logged In";
+        }
     }
 }

@@ -16,4 +16,9 @@ public class AdminController {
         return adminService.adminLogin(adminName, adminPassword);
     }
 
+    @PostMapping("logout")
+    public String adminLogout(@RequestParam String adminName){
+        return adminService.adminLogout(adminName);
+    }
+
 }
