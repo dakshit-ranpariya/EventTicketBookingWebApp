@@ -36,7 +36,7 @@ public class EmailService {
 
 
 
-    public void sendBookingMail(String userEmail, String showName, String venue, String classType, Integer tickets) {
+    public void sendBookingMail(String userEmail, String showName, String venue, String classType, Integer tickets,Integer ticketPrice, Integer totalPrice) {
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -56,6 +56,8 @@ public class EmailService {
             body.append("<p>Venue: " + venue + "</p>");
             body.append("<p>Class Type: " + classType + "</p>");
             body.append("<p>Number of Tickets: " + tickets + "</p>");
+            body.append("<p>Price per Ticket :" + ticketPrice + "</p>");
+            body.append("<p>Total amount: " + totalPrice + "</p>");
             body.append("</div>");
             body.append("</body>");
             body.append("</html>");

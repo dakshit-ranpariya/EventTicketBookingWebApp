@@ -66,7 +66,8 @@ public class ShowService {
                     if(shows.getPlatinumSeats()>=bookingDTO.getTickets()){
                         shows.setPlatinumSeats(shows.getPlatinumSeats()-bookingDTO.getTickets());
                         showRepo.save(shows);
-                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets());
+                        Integer totalPrice = bookingDTO.getTickets()* shows.getPlatinumPrice();
+                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets(), shows.getPlatinumPrice(), totalPrice);
                         return "Ticket is booked successfully";
                     }else{
                         return "Not enough seats are available";
@@ -75,7 +76,8 @@ public class ShowService {
                     if(shows.getGoldSeats()>=bookingDTO.getTickets()){
                         shows.setGoldSeats(shows.getGoldSeats()-bookingDTO.getTickets());
                         showRepo.save(shows);
-                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets());
+                        Integer totalPrice = bookingDTO.getTickets()* shows.getGoldPrice();
+                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets(), shows.getGoldPrice(), totalPrice);
                         return "Ticket is booked successfully";
                     }else{
                         return "Not enough seats are available";
@@ -85,7 +87,8 @@ public class ShowService {
                     if(shows.getSilverSeats()>=bookingDTO.getTickets()){
                         shows.setSilverSeats(shows.getSilverSeats()-bookingDTO.getTickets());
                         showRepo.save(shows);
-                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets());
+                        Integer totalPrice = bookingDTO.getTickets()* shows.getSilverPrice();
+                        emailService.sendBookingMail(bookingDTO.getUserEmail(),bookingDTO.getShowName(),shows.getVenue(),bookingDTO.getClassType(),bookingDTO.getTickets(), shows.getSilverPrice(), totalPrice);
                         return "Ticket is booked successfully";
                     }else{
                         return "Not enough seats are available";
