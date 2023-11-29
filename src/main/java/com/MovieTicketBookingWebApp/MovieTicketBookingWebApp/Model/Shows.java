@@ -13,11 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Shows {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String showName;
     private String showDesc;
     private String venue;
@@ -29,10 +27,5 @@ public class Shows {
     private Integer goldSeats;
     private Integer silverPrice;
     private Integer silverSeats;
-
-
-
-
-
 
 }

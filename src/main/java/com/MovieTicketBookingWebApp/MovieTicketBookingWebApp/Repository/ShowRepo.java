@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ShowRepo extends JpaRepository<Shows, Long> {
     Shows findByShowName(String showName);
-
     boolean existsByShowName(String showName);
 }

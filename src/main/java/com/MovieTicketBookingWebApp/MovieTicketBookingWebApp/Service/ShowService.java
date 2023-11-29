@@ -1,11 +1,16 @@
 package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service;
 
 import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.Admin;
+import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.DTO.BookingDTO;
 import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.Shows;
+import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.User;
 import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.AdminRepo;
 import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.ShowRepo;
+import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ShowService {
@@ -15,6 +20,10 @@ public class ShowService {
 
     @Autowired
     AdminRepo adminRepo;
+
+    @Autowired
+    UserRepo userRepo;
+
     public String addShow(Shows show) {
         Admin admin = adminRepo.findByAdminName("admin");
         if(admin.getStatus().equals("Logged In")){
@@ -36,6 +45,60 @@ public class ShowService {
             return "Show deleted Successfully";
         }else{
             return "Admin Login Required!";
+        }
+    }
+
+    public List<Shows> getAllShows() {
+        return showRepo.findAll();
+    }
+
+    public String ticketBooking(BookingDTO bookingDTO) {
+        User user = userRepo.findByUserEmail(bookingDTO.getUserEmail());
+        if(user.getStatus().equals("Logged In")){
+
+            Shows shows = showRepo.findByShowName(bookingDTO.getShowName());
+            if(showRepo.existsByShowName(shows.getShowName())){
+                if(bookingDTO.getClassType().equals("platinum")){
+                    if(shows.getPlatinumSeats()>=bookingDTO.getTickets()){
+                        shows.setPlatinumSeats(shows.getPlatinumSeats()-bookingDTO.getTickets());
+                        showRepo.save(shows);
+                        return "Ticket is booked successfully";
+                    }else{
+                        return "Not enough seats are available";
+                    }
+                }else{
+                    return bookingDTO.getClassType()+" type does not exists!";
+                }
+                if(bookingDTO.getClassType().equals("gold")){
+                    if(shows.getGoldSeats()>=bookingDTO.getTickets()){
+                        shows.setGoldSeats(shows.getGoldSeats()-bookingDTO.getTickets());
+                        showRepo.save(shows);
+                        return "Ticket is booked successfully";
+                    }else{
+                        return "Not enough seats are available";
+                    }
+                }
+                else{
+                    return bookingDTO.getClassType()+" type does not exists!";
+                }
+                if(bookingDTO.getClassType().equals("silver")){
+                    if(shows.getSilverSeats()>=bookingDTO.getTickets()){
+                        shows.setSilverSeats(shows.getSilverSeats()-bookingDTO.getTickets());
+                        showRepo.save(shows);
+                        return "Ticket is booked successfully";
+                    }else{
+                        return "Not enough seats are available";
+                    }
+                }
+                else{
+                    return bookingDTO.getClassType()+" type does not exists!";
+                }
+            }else{
+                return "Show does not exists!";
+            }
+
+        }else {
+            return "User Login Required!";
         }
     }
 }

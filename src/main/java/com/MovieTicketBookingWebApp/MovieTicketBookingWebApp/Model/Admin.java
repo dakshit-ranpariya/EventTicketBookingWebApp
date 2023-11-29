@@ -14,10 +14,7 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String adminName;
-
     private String adminPassword;
-
     private String status;
 }
