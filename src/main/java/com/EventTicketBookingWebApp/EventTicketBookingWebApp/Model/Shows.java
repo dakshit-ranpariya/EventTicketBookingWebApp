@@ -1,4 +1,4 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

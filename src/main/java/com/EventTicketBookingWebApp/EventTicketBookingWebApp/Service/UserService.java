@@ -1,10 +1,10 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service;
 
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.DTO.ResetDTO;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.User;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.UserRepo;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service.Utility.OTPGenerator;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service.Utility.passwordEncrypter;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.DTO.ResetDTO;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.User;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Repository.UserRepo;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service.Utility.OTPGenerator;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service.Utility.passwordEncrypter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.MovieTicketBookingWebApp</groupId>
-	<artifactId>MovieTicketBookingWebApp</artifactId>
+	<artifactId>EventTicketBookingWebApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Movie Ticket Booking Web App</name>
 	<description>Movie Ticket Booking Web App project for Spring Boot</description>

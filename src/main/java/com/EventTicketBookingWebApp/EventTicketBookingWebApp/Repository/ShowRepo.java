@@ -1,6 +1,6 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Repository;
 
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.Shows;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.Shows;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

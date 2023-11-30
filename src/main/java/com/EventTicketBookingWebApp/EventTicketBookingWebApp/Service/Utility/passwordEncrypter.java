@@ -1,4 +1,4 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service.Utility;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service.Utility;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

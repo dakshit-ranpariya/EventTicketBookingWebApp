@@ -1,4 +1,4 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.DTO;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.DTO;
 
 import lombok.Data;
 

@@ -1,8 +1,8 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Controller;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Controller;
 
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.DTO.ResetDTO;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.User;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service.UserService;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.DTO.ResetDTO;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.User;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;

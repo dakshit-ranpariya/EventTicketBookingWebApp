@@ -1,12 +1,12 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service;
 
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.Admin;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.DTO.BookingDTO;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.Shows;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.User;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.AdminRepo;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.ShowRepo;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.UserRepo;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.DTO.BookingDTO;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.Shows;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.Admin;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.User;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Repository.AdminRepo;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Repository.ShowRepo;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Repository.UserRepo;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

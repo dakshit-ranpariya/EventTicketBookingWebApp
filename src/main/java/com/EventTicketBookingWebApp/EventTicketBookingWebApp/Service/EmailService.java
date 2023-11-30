@@ -1,4 +1,4 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service;
 
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;

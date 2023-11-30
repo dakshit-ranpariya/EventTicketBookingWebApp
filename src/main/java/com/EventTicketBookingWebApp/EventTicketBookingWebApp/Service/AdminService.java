@@ -1,7 +1,7 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service;
 
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.Admin;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Repository.AdminRepo;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.Admin;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Repository.AdminRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

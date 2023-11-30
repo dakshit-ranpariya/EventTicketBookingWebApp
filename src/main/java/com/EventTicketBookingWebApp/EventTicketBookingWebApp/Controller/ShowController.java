@@ -1,9 +1,9 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Controller;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Controller;
 
 
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.DTO.BookingDTO;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Model.Shows;
-import com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service.ShowService;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.DTO.BookingDTO;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Model.Shows;
+import com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service.ShowService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

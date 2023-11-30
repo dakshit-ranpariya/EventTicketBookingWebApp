@@ -1,4 +1,4 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Service.Utility;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Service.Utility;
 
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 

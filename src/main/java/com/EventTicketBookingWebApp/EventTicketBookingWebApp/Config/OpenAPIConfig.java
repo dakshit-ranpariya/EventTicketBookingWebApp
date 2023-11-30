@@ -1,4 +1,4 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp.Config;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp.Config;
 
 
 

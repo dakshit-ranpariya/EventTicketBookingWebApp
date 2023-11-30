@@ -1,13 +1,13 @@
-package com.MovieTicketBookingWebApp.MovieTicketBookingWebApp;
+package com.EventTicketBookingWebApp.EventTicketBookingWebApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MovieTicketBookingWebAppApplication {
+public class EventTicketBookingWebAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MovieTicketBookingWebAppApplication.class, args);
+		SpringApplication.run(EventTicketBookingWebAppApplication.class, args);
 	}
 
 }
